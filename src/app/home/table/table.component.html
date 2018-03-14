@@ -1,3 +1,17 @@
-<p>
-  table works!
-</p>
+<div class="ag-table">
+  <div class="btn-group">
+    <button (click)="addColumn()" [disabled]="addColumnButtonDisabled">添加列</button>
+    <button (click)="addRow()">添加行</button>
+  </div>
+  
+  <ag-grid-angular
+    [rowData]="rowData" 
+    [columnDefs]="columnDefs" 
+    [pagination]="true" 
+    [paginationAutoPageSize]="true" 
+    enableSorting 
+    enableFilter 
+    (gridReady)="onGridReady($event)" 
+    class="ag-theme-balham">
+  </ag-grid-angular>
+</div>

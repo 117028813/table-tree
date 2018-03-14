@@ -7,6 +7,9 @@ import { HomeModule } from './home/home.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { LoginService } from './services/login.service';
+import { LoginGuardService } from './services/login-guard.service';
+import { GridDataService } from './services/grid-data.service';
 
 
 
@@ -21,7 +24,11 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     HomeModule
   ],
-  providers: [],
+  providers: [
+    LoginService,
+    LoginGuardService,
+    GridDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
