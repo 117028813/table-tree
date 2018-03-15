@@ -9,6 +9,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { TreeComponent } from './tree/tree.component';
 import { TableComponent } from './table/table.component';
+import { RedCellComponent } from './red-cell/red-cell.component';
 
 // thrid party module
 import { TreeModule } from 'ng2-tree';
@@ -19,8 +20,15 @@ import { AgGridModule } from 'ag-grid-angular';
     CommonModule,
     HomeRoutingModule,
     TreeModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([
+      RedCellComponent
+    ])
   ],
-  declarations: [HomeComponent, TreeComponent, TableComponent]
+  declarations: [
+    HomeComponent,
+    TreeComponent,
+    TableComponent,
+    RedCellComponent
+  ]
 })
 export class HomeModule { }

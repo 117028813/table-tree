@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { RedCellComponent } from '../home/red-cell/red-cell.component';
+
 @Injectable()
 export class GridDataService {
 
@@ -16,6 +18,12 @@ export class GridDataService {
         pinned: 'left'
       })
     }
+
+    this.gridData.columnDefs.forEach((val, ind) => {
+      if (val.field === 'b') {
+        val.cellRendererFramework = RedCellComponent
+      }
+    })
 
     for (let i = 0; i < 10; i++) {
       this.gridData.rowData[i] = {}
